@@ -40,8 +40,8 @@ export default function GetAll() {
           return (
             <div
               className='card'
-              style='width: 18rem;'
-            //   style={{ display: 'inline-block' }}
+              //style='width: 18rem'
+             style={{display: 'inline-block'}}
               >
               <div className='card-body'>
                 <h5 className='card-title'>Title : {note.title}</h5>

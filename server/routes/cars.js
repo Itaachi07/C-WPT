@@ -5,13 +5,13 @@ const utils = require('../utils')
 const router = express.Router()
 
 router.post('/add', (request, response) => {
-  const { userId, title, content } = request.body
+  const { id, name, model } = request.body
 
   const statement = `INSERT INTO carsTB 
                     (id, name, model,price,car_color) 
                     VALUES (?,?,?,?,?)`
 
-  db.pool.query(statement, [userId, title, content], (error, note) => {
+  db.pool.query(statement, [id,name, model], (error, note) => {
     response.send(utils.createResult(error, note))
   })
 })
@@ -32,7 +32,7 @@ router.get('/get/:userId', (request, response) => {
 
   const statement = `SELECT * from carsTB`
 
-  db.pool.query(statement, [userId], (error, note) => {
+  db.pool.query(statement, [id], (error, note) => {
     response.send(utils.createResult(error, note))
   })
 })
