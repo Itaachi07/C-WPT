@@ -55,6 +55,7 @@ export default function Addnote() {
             setname(event.target.value)
           }}
         />
+        
       </div>
       <div className='mb-3'>
         <label for='exampleInputPassword1' className='form-label'>
