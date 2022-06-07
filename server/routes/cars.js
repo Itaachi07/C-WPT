@@ -19,7 +19,7 @@ router.post('/add', (request, response) => {
 router.delete('/delete/:id', (request, response) => {
   const { id } = request.params
 
-  const statement = `DELETE FROM  note 
+  const statement = `DELETE FROM  carsTB 
                       WHERE id = ?`
 
   db.pool.query(statement, [id], (error, note) => {
@@ -30,9 +30,7 @@ router.delete('/delete/:id', (request, response) => {
 router.get('/get/:userId', (request, response) => {
   const { userId } = request.params
 
-  const statement = `SELECT  
-                      title, content from note
-                      WHERE userId = ?`
+  const statement = `SELECT * from carsTB`
 
   db.pool.query(statement, [userId], (error, note) => {
     response.send(utils.createResult(error, note))
